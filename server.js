@@ -9,9 +9,11 @@ app.use(express.json())
 // Allows access from all origins. Means that you can access API info from sources other than this folder.
 app.use(cors())
 
-// bodyparser middleware
+// Bodyparser middleware.
 app.use(express.urlencoded({extended: false}))
 
+// Controller middleware.
+app.use('/api', require('./controllers/users'))
 
 // We use 'process.env.PORT' for if heroku wants to use its own port, no need for us to put it in our .env.
 app.listen(process.env.PORT || 8000, () => {
