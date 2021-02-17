@@ -1,3 +1,4 @@
+require('dotenv').config
 const express = require('express')
 const app = express()
 const cors = require('cors')
@@ -12,7 +13,7 @@ app.use(cors())
 app.use(express.urlencoded({extended: false}))
 
 
-// We use 'process.env.PORT' for if heroku wants to use its own port.
+// We use 'process.env.PORT' for if heroku wants to use its own port, no need for us to put it in our .env.
 app.listen(process.env.PORT || 8000, () => {
     console.log("Listening on port 8000") // Putting our server on a different port since our client, React, defaults to port 3000.
 })
