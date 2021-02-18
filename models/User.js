@@ -1,7 +1,14 @@
 const mongoose = require('../db/connection')
 
 const options = {
-    timestamps: true
+    timestamps: true,
+    toJSON: {
+        virtuals: true, 
+        transform: (_doc, userDocToReturn) => {
+            delete userDocToReturn.password
+            return userDocToReturn
+        }
+    }
 }
 
 // mongoose.Schema is a constructor method. Takes in schema and options as arguments.

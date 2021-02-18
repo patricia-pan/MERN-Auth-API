@@ -1,3 +1,5 @@
+// We used MongoDB Atlas: https://cloud.mongodb.com/v2/602d91ede850d13d46b6bd02#metrics/replicaSet/602d937fea461b33953872b5/explorer/myFirstDatabase/users/find
+
 require('dotenv').config
 const express = require('express')
 const app = express()
